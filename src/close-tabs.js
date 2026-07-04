@@ -77,7 +77,7 @@ async function showUI() {
 }
 
 document.addEventListener("input", (e) => {
-  if (e.target.id === "custom-domain") {
+  if (e.target.id === "custom-domain" || e.target.name === "match-type") {
     setPopupCustomDomain();
   }
 });
