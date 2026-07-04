@@ -25,12 +25,14 @@ function setPopupDomainText(domain, section, matchType) {
 
 async function setPopupCurrentDomain() {
   let domain = await currentTabDomain();
-  setPopupDomainText(domain, 'current', 'full');
+  let matchType = document.getElementById('match-type-subdomain').checked ? "subdomain" : "full";
+  setPopupDomainText(domain, 'current', matchType);
 }
 
 function setPopupCustomDomain() {
   let domain = document.getElementById('custom-domain').value.trim();
-  setPopupDomainText(domain, 'custom', 'full');
+  let matchType = document.getElementById('match-type-subdomain').checked ? "subdomain" : "full";
+  setPopupDomainText(domain, 'custom', matchType);
 }
 
 function closeTabs(domain, matchType) {
