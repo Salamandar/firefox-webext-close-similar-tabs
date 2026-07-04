@@ -11,31 +11,37 @@
     <script src="close-tabs.js"></script>
 
     <div class="panel">
-      <div class="panel-section panel-section-header">
+      <div class="panel-header">
         <div class="text-section-header">Close Similar Tabs</div>
       </div>
 
       <div class="panel-section">
-        <button id="tabs-close-current">Close tabs with same domain as current tab</button>
-        <p id="current-domain"/>
+        <input type="radio" name="domain-source" id="domain-source-current" value="current" checked/>
+        <label for="domain-source-current">
+          Current tab domain (<span id="current-domain-matching-count">unknown</span> matching tabs)
+          <br/>
+          <span id="current-domain" class="domain-text">Undetected<span/>
+        </label>
+
+
+        <input type="radio" name="domain-source" id="domain-source-custom" value="custom"/>
+        <label for="domain-source-custom">
+          Custom tab domain (<span id="custom-domain-matching-count">unknown</span> matching tabs)
+          <input type="text" class="domain-text" id="custom-domain" placeholder="example.com"/>
+        </label>
       </div>
 
+      <div class="panel-section">
+        <input type="radio" name="match-type" id="match-type-full" value="full" checked />
+        <label>Full domain (matches all sub-domains)</label>
 
-<!--
-      <button id="tabs-close-custom"/> <p id="current-domain"/>
-
-      <a href="#" id="tabs-move-beginning"
-        >Move active tab to the beginning of the window</a
-      ><br />
-
-      … Define the other menu items …
-
-      <div class="switch-tabs">
-        <p>Switch to tab</p>
-
-        <div id="tabs-list"></div>
+        <input type="radio" name="match-type" id="match-type-subdomain" value="subdomain" />
+        <label>Sub-domain only (exact match)</label>
       </div>
-      -->
+
+      <div class="panel-section panel-centered">
+        <button id="tabs-close">Close matching tabs</button>
+      </div>
     </div>
 
   </body>

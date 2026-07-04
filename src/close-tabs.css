@@ -1,21 +1,8 @@
 body {
-    color-scheme: light dark;
-    background-color: var(--popup, inherit);
-    color: var(--popup_text, inherit);
-
-    font-family: "Sans";
-}
-
-.panel {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.panel-section-header {
-    margin: auto;
+  color-scheme: light dark;
+  background-color: var(--popup, inherit);
+  color: var(--popup_text, inherit);
+  font-family: "Sans";
 }
 
 a {
@@ -23,14 +10,45 @@ a {
   display: inline-block;
 }
 
-.switch-tabs {
-  padding-left: 10px;
-}
-
-.switch-tabs a {
-  display: block;
+.domain-text {
+  font-family: "monospace";
 }
 
 .panel {
   margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
+
+.panel-header {
+  text-align: center;
+}
+
+.panel-section {
+  margin-bottom: 8px;
+  display: block;
+}
+
+.panel-section label {
+  margin-bottom: 8px;
+}
+
+.panel-centered {
+  text-align: center;
+  align-items: center;
+}
+
+#custom-domain {
+  width: 90%;
+  margin-top: 4px;
+}
+
+input[type="radio"] {
+  float: left;
+}
+
+label{
+  margin-left: 25px;
+  display: block;
+ }
