@@ -1,3 +1,10 @@
+function matchPatterns(domain, matchType) {
+  if (matchType === "full") {
+    return [`*://${domain}/*`, `*://*.${domain}/*`];
+  }
+  return [`*://${domain}/*`];
+}
+
 function currentTabDomain() {
   return browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
     let tabInfo = tabs[0];
@@ -7,8 +14,7 @@ function currentTabDomain() {
 }
 
 function similarTabs(domain, matchType) {
-  // TODO: handle matchType=subdomain
-  return browser.tabs.query({ url: `*://${domain}/*` });
+  return browser.tabs.query({ url: matchPatterns(domain, matchType) });
 }
 
 function setPopupDomainText(domain, section, matchType) {
