@@ -28,7 +28,6 @@ async function setPopupCurrentDomain() {
 
 function setPopupCustomDomain() {
   let domain = document.getElementById('custom-domain').value.trim();
-  console.log(domain);
   setPopupDomainText(domain, 'custom', 'full');
 }
 
