@@ -6,6 +6,18 @@ body {
     font-family: "Sans";
 }
 
+.panel {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.panel-section-header {
+    margin: auto;
+}
+
 a {
   margin: 10px;
   display: inline-block;
