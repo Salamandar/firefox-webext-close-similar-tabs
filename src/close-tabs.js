@@ -14,11 +14,13 @@ function similarTabs(domain, matchType) {
 function setPopupDomainText(domain, section, matchType) {
   let domainElt = document.getElementById(`${section}-domain`);
   let matchingElt = document.getElementById(`${section}-domain-matching-count`);
-  similarTabs(domain, matchType).then((tabs) => {
-    let count = tabs.length;
-    domainElt.innerText = domain;
-    matchingElt.innerText = count;
-  });
+  if (domain) {
+    similarTabs(domain, matchType).then((tabs) => {
+      let count = tabs.length;
+      domainElt.innerText = domain;
+      matchingElt.innerText = count;
+    });
+  }
 }
 
 async function setPopupCurrentDomain() {
