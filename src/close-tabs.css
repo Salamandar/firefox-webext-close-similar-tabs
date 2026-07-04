@@ -1,0 +1,24 @@
+body {
+    color-scheme: light dark;
+    background-color: var(--popup, inherit);
+    color: var(--popup_text, inherit);
+
+    font-family: "Sans";
+}
+
+a {
+  margin: 10px;
+  display: inline-block;
+}
+
+.switch-tabs {
+  padding-left: 10px;
+}
+
+.switch-tabs a {
+  display: block;
+}
+
+.panel {
+  margin: 5px;
+}
