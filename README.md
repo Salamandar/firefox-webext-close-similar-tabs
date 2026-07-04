@@ -1,4 +1,4 @@
-# Close Similar Tabs Firefox add-on
+# Close Similar Domain Tabs Firefox add-on
 
 This simple add-on allows closing similar tabs:
 
